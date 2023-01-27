@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project by Kamen Randall</title>
+    <title>TacoCat: A Coding Project by Kamen Randall</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,7 +29,7 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img src="img/android-chrome-512x512.png" class="d-inline-block align-text-top"
-                alt="Kamen Randall Logo" width="30" height="24"> APP NAME</a>
+                alt="Kamen Randall Logo" width="30" height="24"> TacoCat</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -62,17 +62,42 @@
             <div class="row row-cols-1 row-cols-md-lg-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                        // Call Hello World
-                        function HelloWorld(){
-                            alert("Hello World");
+                        // Reverse the string
+                        //Logic Function
+                        function reverseString(userString){
+                            let revString = [];
+
+                            //Reverse string using for loop
+                            for (let i = userString.length - 1; i >= 0; i--){
+                                revString += userString[i];
+                            }
+
+                            return revString;
+                        }
+
+                        // Display the reversed string to the user
+                        function displayString(revString, userString){
+                            //Write to the page
+                            if (revString.toLowerCase() == userString.toLowerCase()) {
+                                document.getElementById("msg").innerHTML = `Your Word IS a Palindrome`;
+                            } else {
+                                document.getElementById("msg").innerHTML = 'Your Word is NOT a Palindrome';
+                            }
+                            //Show the alert box
+                            document.getElementById("alert").classList.remove("invisible");
                         }
                     </code>
                     </pre>
                 </div>
                 <div class="col-lg-4">
-                    <p>The Code is structured in one function</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a message of "Hello World".</p>
+                    <p>The Code is structured in multiple functions</p>
+                    <h5>reverseString(userString)</h5>
+                    <p>The first function "reverseString(userString)" takes a user's input string as an argument and creates a new empty array called "revString".
+                        Then, it uses a "for" loop that starts at the last index of the input string and goes backwards until it reaches the first index of the input string. It takes each character of the input string and adds it to the "revString" array.
+                        The function then returns the "revString" array.</p>
+                    <h5>displayString(revString, userString)</h5>
+                    <p>The second function "displayString(revString, userString)" takes in the reversed string and the original user string as arguments. It compares the reversed string to the original string (ignoring the case) using the .toLowerCase() method. 
+                        If the reversed string is the same as the original string, it shows the message "Your Word IS a Palindrome" on the page and if not, it shows "Your Word is NOT a Palindrome". Finally, it removes the class "invisible" from an element with id "alert"</p>
                 </div>
             </div>
         </div>
